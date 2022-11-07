@@ -1,0 +1,22 @@
+<%- include("header") %>
+
+<h1>Name:<%=user.name %> </h1>
+<h1>Email: <%=user.email  %> </h1>
+<% if(photo!=null){ %> 
+<img src="<%= photo.coverPhoto %> " alt="">
+<img src="<%= photo.image %> " alt="">
+<% } %> 
+
+<% videos.forEach(function(video){ %> 
+                  
+    <img src="<%= video.thumbnail %>" style=" height: 300px;width:20vw; object-fit: cover;">
+    <p>
+      <%= video.minutes +":"+ video.seconds %> 
+    </p>
+    <div >
+      <h4><%= video.title %></h4>
+       <a href="/watch/<%= video.watch %> ">view</a>
+    </div>
+  </div>
+
+  <% }) %> 

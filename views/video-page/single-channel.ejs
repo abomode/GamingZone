@@ -1,0 +1,81 @@
+<%- include("../header") %> 
+
+<% if(isMyChannel){ %>
+    <form  method="POST" action="/change-profile-picture" enctype="multipart/form-data" id="form-change-profile-picture">
+
+
+<input type="file" id="input-file-change-profile-picture" style="display:none;" accept="image/*" name="image" required onchange="document.getElementById('form-change-profile-picture').submit();">
+
+
+    </form> 
+
+    <form  method="POST" action="/change-cover-picture" enctype="multipart/form-data" id="form-change-cover-picture">
+
+
+        <input type="file" id="input-file-change-cover-picture" style="display:none;" accept="image/*" name="image" required onchange="document.getElementById('form-change-cover-picture').submit();">
+         
+        
+            </form> 
+            <% } %> 
+
+            <style>
+
+                .cover-picture{
+                    width: 100%;
+                }
+
+                .profile-picture{
+                    width: 150px;
+                    height: 150px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+            </style>
+<div class="container-fluid">
+    <div class="row">
+        <% if(isMyChannel){ %>
+            <img src="<%= baseUrl + user.coverPicture %>" style="cursor:pointer; " class="img-fluid cover-picture" onerror="this.src='http://placehold.it/1900*700'" onclick="document.getElementById('input-file-change-cover-photo').click();">
+            <% } else { %> 
+            <img src="<%= baseUrl + user.coverPicture %>"  class="img-fluid cover-picture" onerror="this.src='http://placehold.it/1900*700'">
+            <% } %> 
+          
+    </div>
+    <div>
+        <div>
+            <div>
+                <% if(isMyChannel){ %>
+                    <img src="<%= baseUrl + user.image %>" style="cursor:pointer; " class="img-fluid profile-picture" on error="this.src='http://placehold.it/150*150'" onclick="document.getElementById('input-file-change-profile-picture').click();">
+                    <% } else { %> 
+                    <img src="<%= baseUrl + user.image %>"  class="img-fluid profile-photo" onerror="this.src='http://placehold.it/150*150'">
+                    <% } %> 
+                
+            </div>
+            <div>
+                <h3><%= user.name %></h3>
+            </div>
+        </div>
+        <hr>
+        <h1>Channel Videos</h1>
+        <hr>
+        <div class="row">
+            <% user.videos=user.videos.reverse();
+            user.videos.forEach(function(video){ %>
+                <div>
+                    <div>
+                        <img src="<%=baseUrl +video.thumbnail %>"  class="card-img-top">
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                <%= video.title %>
+                                </h4>
+                                <p class="card-text"><%= video.category %></p>
+                            </div>
+                            <div class="card-footer">
+                         <a href="/watch/<%= video.watch %>" class="btn btn-primary">View</a>       
+                                </div>
+                        </div></div> 
+                        <% }) %>
+        </div>
+    </div>
+</div>
+
+<%- include("../footer") %>

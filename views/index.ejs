@@ -1,0 +1,50 @@
+<%- include("header") %>
+
+     <!-- <div class="container">
+          <P>hello user</P>
+     </div> -->
+
+
+     <header class="header1" id="header1">
+          <ul>
+           <li>Valorant</li>
+           <li>Mini Militia</li>
+           <li>Fifa</li>
+           <li>Tekken</li>
+           <li>Pubg</li>
+           <li>Call of Duty</li>
+           <li>League of Legends</li>
+           <li>Counter-Strike</li>
+         
+          </ul>
+           
+       </header>
+
+
+        <!--Container Main start-->
+        <div class="height-100 bg-light">
+          <hr>
+      </div>
+
+      <div class="top-recommended">
+          <h2 style="    margin-left: 31vw;
+          margin-bottom: 5vh;
+          text-decoration: underline;">Top-Recommended</h2>
+          <div class="grid grid-three-col">
+              <div class="new-card" >
+              
+                <% videos.forEach(function(video){ %> 
+                  
+                    <img src="<%= video.thumbnail %>" class="video-show">
+                    <p>
+                      <%= video.minutes +":"+ video.seconds %> 
+                  
+                      <%= video.title %>
+                       <a href="/watch/<%= video.watch %> ">view</a>
+                      </p>
+                    </div>
+                  <div>
+
+                
+                  <% }) %> 
+                  

@@ -1,0 +1,32 @@
+<%- include("header") %>
+<h1>Upload Video</h1>
+    <form action="/upload-video" method="POST" enctype="multipart/form-data">
+        <label>Video</label>
+         <input type="file" name="video" accept="video/*" class="form-control-file" required> 
+         <label>Thumbnail</label>
+         <input type="file" name="thumbnail" accept="image/*" class="form-control-file" required> 
+         <div class="form-group">
+         <label>Title</label>  <br>
+        <input type="text" class="text" name="title" class="form-control" required>
+        </div>
+        <div class="form-group">
+        <label>Description</label>
+        <textarea name="description" class="form-control" cols="30" rows="5" style="width:82vw"; required></textarea>
+        </div>
+        <div class="form-group">
+        <label>Tags</label><br>
+        <input type="text" class="text" name="tags" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>Category</label>
+        <select name="category" class="form-control" style="width:82vw";required>
+            <option value="technology">technology</option>
+            <option value="gaming">gaming</option>
+            <option value="education">education</option>
+            <option value="funny">funny</option>
+            </select>
+            </div>
+        <button type="submit" value="" style="padding: 12px;" Upload>Upload</button>
+    </form>
+</body>
+</html>
