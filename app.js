@@ -69,6 +69,23 @@ http.listen(8080,function () {
                     });
                 });  
             });
+
+            app.post("/search",async (req,res)=>{
+                //console.log(req.body.search);
+                await database.collection("videos").find({
+                    "$or":[
+                        {"title":{$regex:req.body.search,$options: 'i'}},
+                        {"tags":{$regex:req.body.search,$options: 'i'}},
+                        {"category":{$regex:req.body.search,$options: 'i'}},
+                        {"user.name":{$regex:req.body.search,$options: 'i'}}
+                    ]
+                }).toArray(function (error,videos) {
+                    res.render("index",{
+                        "isLogin":req.session.user_id? true :false,
+                        "videos":videos
+                    })
+                })
+            });
             
 
             app.get('/signup',(req,res)=>{
