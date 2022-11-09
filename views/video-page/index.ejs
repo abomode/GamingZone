@@ -1,43 +1,44 @@
-<%- include("../header") %> 
-        <div class="video-container" >
-    <div class="details" >
-            <h1><%= video.title %></h1>
+<%- include("../header") %>
+    <div class="video-container">
+        <div class="details">
+            <h1>
+                <%= video.title %>
+            </h1>
             <p class="para-detail">
-                By <%= video.user.name %> 
+                By <%= video.user.name %>
             </p>
             <p class="para-detail">
                 Posted on
-                <% 
-                var createdAt= new Date(video.createdAt);
-                var date = createdAt.getDate()+"";
-                %> 
-                <%= date.padStart(2,"0")+" " + months[createdAt.getMonth()]+","+ createdAt.getFullYear() %> 
+                <% var createdAt=new Date(video.createdAt); var date=createdAt.getDate()+""; %>
+                    <%= date.padStart(2,"0")+" " + months[createdAt.getMonth()]+" ,"+ createdAt.getFullYear() %>
             </p>
-       
+
             <input type="hidden" id="videoId1" value="<%=video._id %> ">
             <input type="hidden" id="category" value="<%=video.category %> ">
             <p class="para-detail"><i class="fa fa-eye"></i>
-                <%=video.views %> views</p>
-                <div>
-                    
-                </div>
-                <p class="text-center para-detail" >
-                    <b>Category:</b>
-                    <%= video.category %>
-                </p>
-                <p class="para-detail">
- 
-                    <%= video.descriptions %>
-                </p>
+                <%=video.views %> views
+            </p>
+            <div>
 
-               
+            </div>
+            <p class="text-center para-detail">
+                <b>Category:</b>
+                <%= video.category %>
+            </p>
+            <p class="para-detail">
+
+                <%= video.descriptions %>
+            </p>
+
+
         </div>
-          <div class="video"> <video id="videoPlayer" controls src="<%=baseUrl+video.filePath%> " poster="<%=baseUrl+video.thumbnail %> "  ></video>
-          </div> 
+        <div class="video"> <video id="videoPlayer" controls src="<%=baseUrl+video.filePath%> "
+                poster="<%=baseUrl+video.thumbnail %> "></video>
+        </div>
 
-</div>
+    </div>
 
 
 
-        
-<%- include("../footer") %> 
+
+    <%- include("../footer") %>
