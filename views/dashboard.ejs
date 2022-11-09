@@ -1,22 +1,74 @@
 <%- include("header") %>
 
-<h1>Name:<%=user.name %> </h1>
-<h1>Email: <%=user.email  %> </h1>
-<% if(photo!=null){ %> 
-<img src="<%= photo.coverPhoto %> " alt="">
-<img src="<%= photo.image %> " alt="">
-<% } %> 
-
-<% videos.forEach(function(video){ %> 
-                  
-    <img src="<%= video.thumbnail %>" style=" height: 300px;width:20vw; object-fit: cover;">
-    <p>
-      <%= video.minutes +":"+ video.seconds %> 
-    </p>
-    <div >
-      <h4><%= video.title %></h4>
-       <a href="/watch/<%= video.watch %> ">view</a>
-    </div>
+  <div class="profile-container">
+    <h1 class="dashboard-heading">
+      <%=user.name %>
+    </h1>
+    <!-- <h2 class="dashboard-email">
+      <%#user.email %>
+    </h2> -->
   </div>
+  <% if(photo!=null){ %>
+    <img src="<%= photo.coverPhoto %> " style="
 
-  <% }) %> 
+height: 50vh;
+    width: 93vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 71px;
+    margin-top: 3px;">
+    <img src="<%= photo.image %> " style="    position: absolute;
+top: 37vh;
+height: 15vw;
+width: 15vw;
+border-radius: 125px;
+left: 45vw;
+padding: 12px;
+    border: 2px solid;
+    background-color: white;
+     " alt="">
+    <% } %>
+
+
+
+
+
+
+      <div class="top-recommended2">
+        <h2 style="    margin-left: 38vw;
+    margin-bottom: 5vh;
+    text-decoration: underline;">Your Vidoes</h2>
+        <div class="grid grid-three-col">
+          <div class="new-card">
+
+            <% videos.forEach(function(video){ %>
+
+              <img src="<%= video.thumbnail %>" class="video-show">
+              <div class="video-personal">
+                <p>
+                  <%= video.minutes +":"+ video.seconds %> seconds
+<br>
+                    <%= video.title %>
+                </p>
+                <div style="    display: flex;
+        
+                align-items: center;
+                justify-content: center">
+                  <div>
+                <button class="btn-success" style="margin-right:12px;"><a href="/watch/<%= video.watch %> ">view</a></button>
+</div>
+<div>
+                 <form action="/delete" method="post">
+                  <input type="hidden" name="deleteId" value="<%=video._id%>">
+                  <button class="btn-danger" type="submit">Delete</button>
+                </form>
+              </div>
+              </div>
+              </div>
+          </div>
+
+          <div>
+
+
+            <% }) %>

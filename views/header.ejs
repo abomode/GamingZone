@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <script src="https://kit.fontawesome.com/8df4627fa1.js" crossorigin="anonymous" defer></script>
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
 
@@ -38,7 +39,7 @@
             font-family: var(--body-font);
             font-size: var(--normal-font-size);
             transition: .5s;
-            width:100vw;
+            width: 100vw;
         }
 
         a {
@@ -49,7 +50,7 @@
         .header {
             /* background-color: #000000;
              */
-             background: url(/static/200.webp);
+            background: url(/static/200.webp);
             width: 100%;
             height: var(--header-height);
             position: fixed;
@@ -63,9 +64,10 @@
             z-index: var(--z-fixed);
             transition: .5s
         }
+
         .header1 {
             /* background-color: #000000; */
-        background: url("/static/200.webp");
+            background: url("/static/200.webp");
             width: 100%;
             height: var(--header-height);
             position: fixed;
@@ -79,6 +81,7 @@
             z-index: var(--z-fixed);
             transition: .5s
         }
+
         .header_toggle {
             color: var(--white-color);
             font-size: 1.5rem;
@@ -108,7 +111,7 @@
             /* background-color: var(--first-color);
              */
             background: url(/static/200.webp);
-             padding: .5rem 1rem 0 0;
+            padding: .5rem 1rem 0 0;
             transition: .5s;
             z-index: var(--z-fixed)
         }
@@ -128,7 +131,7 @@
             align-items: center;
             column-gap: 1rem;
             padding: .5rem 0 .5rem 1.5rem;
-            
+
         }
 
         .nav_logo {
@@ -150,7 +153,7 @@
             color: var(--first-color-light);
             margin-bottom: 1.5rem;
             transition: .3s;
-            
+
             text-decoration: none;
         }
 
@@ -222,136 +225,240 @@
         }
 
         .logo img {
-            height: 36px;
-            width: 70px;
+            height: 49px;
+            width: 124px;
             border-radius: 8px;
 
         }
-        .search{
+
+        .search {
             width: 30vw;
         }
-        .input{
+
+        .input {
             display: flex;
         }
-        .icon{
-            width: 42px;
-    height: 38px;
-    color: white;
-    background-color: #bb337c;
+
+        .icon {
+
+            color: white;
+            background-color: #bb337c;
         }
-        i{
-          
-    text-align: center;
-    font-size: 25px;
-     padding-top: 7px;
+
+        i {
+
+            text-align: center;
+            font-size: 15px;
+            padding-top: 7px;
 
         }
-        button{
+
+        button {
             border-radius: 12px;
-    padding: 9px 14px;
-    background-color: white;
-    color: black;
-    outline: none;
+            padding: 9px 14px;
+            background-color: white;
+            color: black;
+            outline: none;
         }
-        .header1 ul{
+
+        .header1 ul {
             display: flex;
             margin-left: 40px;
             margin-top: 10px;
         }
-        .header1 ul li{
+
+        .header1 ul li {
             color: white;
-    list-style: none;
-    text-decoration: none;
-    padding: 5px 20px;
-    background-color: #181857;
-    margin: 10px;
-    border-radius: 12px
+            list-style: none;
+            text-decoration: none;
+            padding: 5px 20px;
+            background-color: #181857;
+            margin: 10px;
+            border-radius: 12px
         }
-        hr{
+
+        hr {
             height: 3px;
-    color: black;
-    top: 58px;
-    position: relative;
+            color: black;
+            top: 58px;
+            position: relative;
         }
-        .top-recommended{
+
+        .top-recommended {
             position: absolute;
-    top: 15vh;
+            top: 15vh;
         }
+
+        .top-recommended2 {
+            position: absolute;
+            top: 95vh;
+        }
+
         .grid-three-col {
-    grid-template-columns: repeat(3, 1fr);
-    margin-top:1rem;
-  }
-  
-.grid {
-  /* display: grid; */
-  display: grid;
-  gap: 0.5rem;
-  margin-left: 2vw;
-}
-/* footer */
-.video-show{
-    height: 200px;
-    width: 25vw;
-    object-fit: cover;
-    border: 1px solid black;
-    border-radius: 12px;
-    padding: 4px;
-    margin: 12px 13px;
-}
-</style>
-<style>
+            grid-template-columns: repeat(3, 1fr);
+            margin-top: 1rem;
+        }
 
-    .signupbtn{
-        margin-left: 12vw;
-    color: white;
-    background-color: black;
-    padding: 11px 32px;
-    outline: none;
-    border: none;
-    }
-    .signupbtn:hover{
-        background-color: white;
-        color: black;
-    }
+        .grid {
+            /* display: grid; */
+            display: grid;
+            gap: 0.5rem;
+            margin-left: 2vw;
+        }
 
-    @media(max-width:407px) {
-        button {
-    border-radius: 12px;
-    padding: 4px 5px;
-    background-color: white;
-    color: black;
-    outline: none;
-}
-    }
-    * {box-sizing: border-box}
-    
-    /* Full-width input fields */
-      input[type=text], input[type=password] {
-        width: 90%;
-    padding: 8px;
-    margin: 14px 0px 13px 0px;
-    display: inline-block;
-    border: none;
-    background: #f1f1f1;
-    }
-    
-    input[type=text]:focus, input[type=password]:focus {
-      background-color: #ddd;
-      outline: none;
-    }
-    body{
-      /* background: url("/static/200w.webp"); */
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-    }
-    hr {
-      border: 1px solid #f1f1f1;
-      margin-bottom: 25px;
-    }
-   
-    /* Set a style for all buttons */
-    /* button {
+        /* footer */
+        .video-show {
+            height: 200px;
+            width: 25vw;
+            object-fit: cover;
+            border: 1px solid black;
+            border-radius: 12px;
+            padding: 4px;
+            margin: 12px 13px;
+        }
+    </style>
+    <style>
+        .signupbtn {
+            margin-left: 12vw;
+            color: white;
+            background-color: black;
+            padding: 11px 32px;
+            outline: none;
+            border: none;
+        }
+
+        .signupbtn:hover {
+            background-color: white;
+            color: black;
+        }
+
+        @media(max-width:407px) {
+            button {
+                border-radius: 12px;
+                padding: 4px 5px;
+                background-color: white;
+                color: black;
+                outline: none;
+            }
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        /* Full-width input fields */
+        input[type=text],
+        input[type=password] {
+            width: 90%;
+            padding: 8px;
+            margin: 14px 0px 13px 0px;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        input[type=text]:focus,
+        input[type=password]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+        @media(max-width:1173px) {
+            .header1 ul li {
+                list-style: none;
+                text-decoration: none;
+                padding: 2px 14px;
+                background-color: #181857;
+                margin: 1px;
+            }
+        }
+
+        @media(max-width:933px) {
+            .header1 {
+                display: none;
+            }
+        }
+
+        @media(max-width:470px) {
+            .video-show {
+                height: 200px;
+                width: 43vw;
+                object-fit: cover;
+                border: 1px solid black;
+                border-radius: 12px;
+                padding: 4px;
+                margin: 4px 5px;
+            }
+
+            .grid-three-col {
+                grid-template-columns: repeat(2, 1fr);
+                margin-top: 1rem;
+            }
+
+            .top-recommended {
+                position: absolute;
+                top: 7vh;
+                left: 3vw;
+            }
+        }
+
+        .except-body {
+            background: url(../static/200.webp);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover
+        }
+
+        @media(max-width:597px) {
+            .grid-three-col {
+                grid-template-columns: repeat(2, 1fr);
+                margin-top: 1rem;
+            }
+
+            .video-show {
+                height: 200px;
+                width: 43vw;
+                object-fit: cover;
+                border: 1px solid black;
+                border-radius: 12px;
+                padding: 4px;
+                margin: 4px 5px;
+            }
+        }
+
+        @media(max-width:374px) {
+            .grid-three-col {
+                grid-template-columns: repeat(1, 1fr);
+                margin-top: 1rem;
+            }
+
+            .video-show {
+                height: 129px;
+                width: 90vw;
+                object-fit: cover;
+                border: 1px solid black;
+                border-radius: 12px;
+                padding: 4px;
+                margin: 4px 5px;
+                /* margin-bottom: 41px; */
+            }
+
+        }
+
+        body {
+            background: url("/static/Space\ -\ 2381.mp4");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        hr {
+            border: 1px solid #f1f1f1;
+            margin-bottom: 25px;
+        }
+
+        /* Set a style for all buttons */
+        /* button {
       background-color: #04AA6D;
       color: white;
       padding: 14px 20px;
@@ -365,302 +472,404 @@
     button:hover {
       opacity:1;
     } */
-    .new-card{
-        width: 10vw;
-        height: 40vh;
-        
-       
-    }
-/* .grid-two-col{
+        .new-card {
+            width: 10vw;
+            height: 40vh;
+
+
+        }
+
+        /* .grid-two-col{
     display: grid;
     grid-template-columns: repeat(2,1fr);
 } */
 
-    /* Extra styles for the cancel button */
-    .cancelbtn {
-      padding: 14px 20px;
-      background-color: #f44336;
-    }
-   
-    /* Float cancel and signup buttons and add an equal width */
- 
-    h1{
-      color: white;
-        text-align: center;
-        font-size: 33px;
-    }
-    input{
-      border-radius: 9px;
-    }
-    /* Add padding to container elements */
-    .container {
-      margin-top: 14px;
-      height: 100vh;
-        width: 39vw;
-        padding: 20px;
-        /* background: url("images.jpeg");
+        /* Extra styles for the cancel button */
+        .cancelbtn {
+            padding: 14px 20px;
+            background-color: #f44336;
+        }
+
+        /* Float cancel and signup buttons and add an equal width */
+
+        h1 {
+            color: white;
+            text-align: center;
+            font-size: 33px;
+        }
+
+        input {
+            border-radius: 9px;
+        }
+
+        /* Add padding to container elements */
+        .container {
+            margin-top: 14px;
+            height: 100vh;
+            width: 39vw;
+            padding: 20px;
+            /* background: url("images.jpeg");
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover; */
-        /* opacity: 0.5; */
-        /* background-color: black; */
-    
-        border-radius: 14px;
-    }
-    
-    /* Clear floats */
-    .clearfix::after {
-      content: "";
-      clear: both;
-      display: table;
-    }
-    p{
-      text-align: center;
-      color: white;
-    }
-    label{
-      color: white;
-      margin-top: 12px;
-    }
+            /* opacity: 0.5; */
+            /* background-color: black; */
 
-    .details{
-    text-align: center;
-    align-items: center;
-    }
-   
-        </style>
-        <!-- login -->
-        <style>
-            body{
-        /* background: url("/static/200.webp"); */
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        height: 110vh;
-      }
-      #videoPlayer{
-        width:"600vw";
-         height:"400vh" ;
-      }
-          .divider:after,
-              .divider:before {
-              content: "";
-              flex: 1;
-              height: 1px;
-              background: #eee;
-              }
-              .h-custom {
-              height: calc(100% - 73px);
-              }
-              @media (max-width: 450px) {
-              .h-custom {
-              height: 100%;
-              }
+            border-radius: 14px;
+        }
 
-              }
-              .img {
-                height: 470px;
-                width: 470px;
-              }
-              .container{
-                /* background-color: #050505; */
-                border-radius: 20px;
-                margin-top: 10px;
-              }
-             .new-container{
+        /* Clear floats */
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        p {
+            text-align: center;
+            color: white;
+        }
+
+        label {
+            color: white;
+            margin-top: 12px;
+        }
+
+        .details {
+            text-align: center;
+            align-items: center;
+        }
+    </style>
+    <!-- login -->
+    <style>
+        body {
+            /* background: url("/static/200.webp"); */
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 110vh;
+        }
+
+        #videoPlayer {
+            width: "600vw";
+            height: "400vh";
+        }
+
+        .divider:after,
+        .divider:before {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #eee;
+        }
+
+        .h-custom {
+            height: calc(100% - 73px);
+        }
+
+        @media (max-width: 450px) {
+            .h-custom {
+                height: 100%;
+            }
+
+        }
+
+        .img {
+            height: 470px;
+            width: 470px;
+        }
+
+        .container {
+            /* background-color: #050505; */
+            border-radius: 20px;
+            margin-top: 10px;
+        }
+
+        .new-container {
+            position: absolute;
+            width: 77vw;
+          margin-top: -12vh;
+            left: 12vw;
+        }
+
+        .signup-form {
+
+            /* border: 1px solid #ccc; */
+            position: absolute;
+            top: 0;
+            left: 30vw;
+
+        }
+
+        .details {
+            margin-top: 10vh;
+            width: 32%;
+        }
+
+        .para-detail {
+            color: white;
+        }
+
+        .video {
+            height: 28vw;
+            width: 66vw;
+            margin-left: 31px;
+        }
+
+        #videoPlayer {
+            height: 25vw;
+            width: 42vw;
+            padding: 23px;
+            background-color: #c6c3c3;
+            border-radius: 15px;
+        }
+
+        .video-container {
+            border-radius: 18px;
+            padding: 28px;
+            position: absolute;
+            display: flex;
+            top: 3vh;
+            left: 7vw;
+            width: 90vw;
+            background: url(../static/200.webp);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 82vh;
+
+        }
+
+        .profile-box {
+            position: absolute;
+            top: 18vh;
+            left: 20vw;
+            width: 60%;
+            background-color: #2ab2a86e;
+            text-align: center;
+            align-items: center;
+            margin: auto;
+            margin-bottom: 21px;
+            padding-bottom: 18px;
+            padding-left: 25px;
+            padding-right: 42px;
+            border-radius: 15px;
+        }
+
+        @media(max-width:1044px) {
+            .video-container {
                 position: absolute;
-                width: 77vw;
-    top: 0;
-    left: 12vw;
-             }
-             .signup-form{
-
-    /* border: 1px solid #ccc; */
-    position: absolute;
-    top: 0;
-    left: 30vw;
-
-             }
-.details{
-    margin-top: 10vh;
-    width: 32%;
-}
-.para-detail{
-    color: white;
-}
-.video{
-        height: 28vw;
-    width: 66vw;
-    margin-left: 31px;
-    }
-#videoPlayer{
-    height: 25vw;
-    width: 42vw;
-    padding: 23px;
-    background-color: #c6c3c3;
-    border-radius: 15px;
-}
-.video-container{
-    border-radius: 18px;
-    padding: 28px;
-    position: absolute;
-    display: flex;
-    top: 5vh;
-    left: 10vw;
-    width: 81vw;
-    background: url(../static/200.webp);
-    background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-
-}
-             @media(max-width:1044px){
-                .video-container{
-                    position: absolute;
-    display: flex;
-    flex-direction: column-reverse;
-    top: 4vh;
-    left: 20vw;
-    width: 62vw;
-}
-.img {
-    height: 286px;
-    width: 388px;
-    margin-left: 11px;
-}
-.details{
-    margin-top: 3vh;
-    width: 75%;
-    margin-left: 35px;
-}
-.input{
-    display: none;
-}
-.btan{    width: 39%;
-}
-                }
-             
-                @media(max-width:555px){
-                    body{
-                        height: 200vh;
-                    }
-                    .container{
-                        width: 74vw;
-                    }
-                    .signup-form {
- 
-    left: 16vw;
-                }
+                display: flex;
+                flex-direction: column-reverse;
+                top: 4vh;
+                left: 20vw;
+                width: 62vw;
             }
 
-            .text{
-                width: 80%;
-    padding: 8px;
-    margin: 14px 0px 13px 0px;
-    display: inline-block;
-    border: none;
-    background: #f1f1f1;
-            }
-            @media(max-width:470px){
-                .btan {
-    width: 60%;
-}
+            .img {
+                height: 286px;
+                width: 388px;
+                margin-left: 11px;
             }
 
-            p{
-        color: black;
-    }
-          </style>
+            .details {
+                margin-top: 3vh;
+                width: 75%;
+                margin-left: 35px;
+            }
+
+            .input {
+                display: none;
+            }
+
+            .btan {
+                width: 40vw;
+            }
+        }
+
+        .box1 {
+            display: flex;
+        }
+
+        @media(max-width:555px) {
+            body {
+                height: 200vh;
+            }
+
+            .container {
+                width: 74vw;
+            }
+
+            .signup-form {
+
+                left: 16vw;
+            }
+        }
+
+        .text {
+            width: 80%;
+            padding: 8px;
+            margin: 14px 0px 13px 0px;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        @media(max-width:470px) {
+            .btan {
+                width: 60%;
+            }
+        }
+
+        .video-personal {
+            width: 25vw;
+            margin-left: 12px;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        p {
+            color: black;
+        }
+
+        .dashboard-heading {
+            font-size: 35px;
+            /* text-transform: uppercase; */
+            text-transform: capitalize;
+            color:#141cbd;
+        }
+
+        .dashboard-email {
+            font-size: 23px;
+            color: #f4efef91;
+        }
+
+        .profile-container {
+            position: relative;
+            top: 70vh;
+            /* display: flex; */
+            /* align-items: center;
+            justify-content: center; */
+            /* text-align: center; */
+            /* display: inline; */
+            display: inline;
+           margin: auto;
+            border-radius: 14px;
+            padding: 6px;
+            /* left: 50%; */
+            /* background-color: #111b4c; */
+            margin-bottom: 1vh;
+            /* margin-left: 38%; */
+        }
+
+        .box2 {
+            display: flex;
+        }
+    </style>
+
 <body id="body-pd">
-    <% 
-        months=["January","February","March","April","May","June","July","August","September","October","November","December"];
-        baseUrl="http://localhost:8080/";
-        %> 
+    <% months=["January","February","March","April","May","June","July","August","September","October","November","December"];
+        baseUrl="http://localhost:8080/" ; %>
         <script type="text/javascript">
-            var months=["January","February","March","April","May","June","July","August","September","October","November","December"];
-            var baseUrl="http://localhost:8080/";
+            var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            var baseUrl = "http://localhost:8080/";
         </script>
-    <header class="header" id="header">
-        <div class="header_toggle"> <i class='bx bx-menu nav_logo-icon' id="header-toggle"></i> </div>
-        <div class="logo"><img src="/static/logo.jpg" alt=""></div>
-        <div class="input" style="
-        width: 71%;
-        padding-left: 191px;
-    ">
+        <header class="header" id="header">
+            <div class="box1">
+                <div class="header_toggle"> <i class='bx bx-menu nav_logo-icon' id="header-toggle"></i> </div>
+                <div class="logo"><img src="/static/logo.jpg" alt=""></div>
+            </div>
+
+            <!-- search feature -->
             <div>
-            <input type="search" class="form-control rounded search" placeholder="Search" aria-label="Search" aria-describedby="search-addon" /></div>
-        <div style="width: 42px;
-        height: 38px;
-        color: white;
-        background-color: #bb337c;">
-            <span class="" id="icon">
-              <i class="fas fa-search icon"></i>
-            </span>
-        </div>
-          </div>
-        <% if(typeof isLogin !="undefined"&& isLogin){ %>
+                <form class="box2" action="/search" method="post">
+                    <div>
+                        <input type="text" class="form-control rounded search" name="search" placeholder="Search"
+                            aria-label="Search" aria-describedby="search-addon" style="    width: 34vw;">
+                    </div>
+                    <div id="icon">
+                        <button type="submit" style="     background-color: #bb337c;
+                        margin-top: 13px;
+                        border: 0px;
+                        padding: 6px 11px;
+                        outline: none;">
 
+                            <i class="fas fa-search icon fav-icon"></i>
 
-<script>
-
-function readNotification(self){
-    var_id=self.getAttribute("data-id");
-
-    var ajax=new XMLHttpRequest();
-    ajax.open("POST","/read-notification",true);
-    ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-
-
-    ajax.onreadystatechange=function(){
-        if(this.readyState==4 && this.status==200){
-            var response=JSON.parse(this.responseText);
-            if(response.status=="error"){
-                alert(response.message);
-            }
-        }
-    }
-
-    ajax.send("notificationId="+ _id);
-    return true;
-    
-}
+                        </button>
+                    </div>
+                </form>
+            </div>
 
 
 
 
-    var ajax=new XMLHttpRequest();
-    ajax.open("GET","/get_user",true);
-    ajax.onreadystatechange=function(){
-        if(this.readyState ==4 && this.status==200){
-            var response=JSON.parse(this.responseText);
-            if(response.status=="success"){
-                window.user=response.user;
-                var html="";
-                window.user.notifications=window.user.notifications.reverse();
+            <% if(typeof isLogin !="undefined" && isLogin){ %>
 
 
-    for(var a=0;a<window.user.notifications.length;a++){
-        var notification=window.user.notifications[a];
-        if(!notification.is_read){
-            if(notification.type=="new-comment"){
-                html+='<a class="dropdown-item" onclick="return readNotification(this);" data-id="' +notification._id +'"href="/watch/' + notification.video_watch+ '">New comment</a>';
-            }
-        }
-    }            
-    document.getElementById("unread-notifications").innerHTML=html;
+                <script>
 
-            }else{
-                alert(response.message);
-            }
+                    function readNotification(self) {
+                        var_id = self.getAttribute("data-id");
 
-        }
-    };
-    ajax.send();
-</script>
+                        var ajax = new XMLHttpRequest();
+                        ajax.open("POST", "/read-notification", true);
+                        ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+
+                        ajax.onreadystatechange = function () {
+                            if (this.readyState == 4 && this.status == 200) {
+                                var response = JSON.parse(this.responseText);
+                                if (response.status == "error") {
+                                    alert(response.message);
+                                }
+                            }
+                        }
+
+                        ajax.send("notificationId=" + _id);
+                        return true;
+
+                    }
 
 
 
-<!-- <li class="nav-item">
+
+                    var ajax = new XMLHttpRequest();
+                    ajax.open("GET", "/get_user", true);
+                    ajax.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            var response = JSON.parse(this.responseText);
+                            if (response.status == "success") {
+                                window.user = response.user;
+                                var html = "";
+                                window.user.notifications = window.user.notifications.reverse();
+
+
+                                for (var a = 0; a < window.user.notifications.length; a++) {
+                                    var notification = window.user.notifications[a];
+                                    if (!notification.is_read) {
+                                        if (notification.type == "new-comment") {
+                                            html += '<a class="dropdown-item" onclick="return readNotification(this);" data-id="' + notification._id + '"href="/watch/' + notification.video_watch + '">New comment</a>';
+                                        }
+                                    }
+                                }
+                                document.getElementById("unread-notifications").innerHTML = html;
+
+                            } else {
+                                alert(response.message);
+                            }
+
+                        }
+                    };
+                    ajax.send();
+                </script>
+
+
+
+                <!-- <li class="nav-item">
     <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-bell fa-fw"></i>
@@ -669,38 +878,43 @@ function readNotification(self){
     </div>
 </li> -->
 
-          <div class="btan"><a href="/upload"><button>Upload Video</button></a>
-            <a href="/logout"><button >Log Out</button></a></div>
-          <% } else{%> 
-        <div class="btan"><a href="/signup"><button>Sign Up</button></a>
-    <a href="/login"><button >Log In</button></a></div>
-             <% } %> 
-    </header>
-    <div class="l-navbar" id="nav-bar">
-        <nav class="nav">
-            <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span
-                        class="nav_logo-name">BBBootstrap</span> </a>
-                <div class="nav_list" style="margin-top: 61px;"> <a href="/dashboard" class="nav_link active"> <i class='bx bx-grid-alt nav_icon'></i>
-                        <span class="nav_name">Dashboard</span> </a> <a href="#" class="nav_link"> <i
-                            class='bx bx-user nav_icon'></i> <span class="nav_name">Users</span> </a> <a href="#"
-                        class="nav_link"> <i class='bx bx-message-square-detail nav_icon'></i> <span
-                            class="nav_name">Messages</span> </a> <a href="#" class="nav_link"> <i
-                            class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Bookmark</span> </a> <a
-                        href="#" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span
-                            class="nav_name">Files</span> </a> <a href="/editProfile" class="nav_link"> <i
-                            class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Stats</span> </a>
+                <div class="btan"><a href="/upload"><button>Upload Video</button></a>
+                    <a href="/logout"><button>Log Out</button></a>
                 </div>
-            </div> <a href="#" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span
-                    class="nav_name">SignOut</span> </a>
-        </nav>
-    </div>
-       <%# if(typeof isLogin !="undefined"&& isLogin){ %> 
-        
-        <!-- <a href="/upload" class="nav-link">Upload video</a>
+                <% } else{%>
+                    <div class="btan"><a href="/signup"><button>Sign Up</button></a>
+                        <a href="/login"><button>Log In</button></a>
+                    </div>
+                    <% } %>
+        </header>
+        <div class="l-navbar" id="nav-bar">
+            <nav class="nav">
+                <div> 
+                    <div class="nav_list" style="margin-top: 61px;">
+                        <% if(typeof isLogin !="undefined" && isLogin){ %>
+                            <a href="/" class="nav_link active"> <i class='bx bx-grid-alt nav_icon'></i>
+                                <span class="nav_name">Home</span> </a>
+                            <% } %>
+                                <a href="/dashboard" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span
+                                        class="nav_name">Dashboard</span> </a> <a href="#" class="nav_link"> <i
+                                        class='bx bx-message-square-detail nav_icon'></i> <span
+                                        class="nav_name">Messages</span> </a> <a href="#" class="nav_link"> <i
+                                        class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Bookmark</span> </a>
+                                <a href="#" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span
+                                        class="nav_name">Files</span> </a> <a href="/editProfile" class="nav_link"> <i
+                                        class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Edit Profile</span>
+                                </a>
+                    </div>
+                </div> 
+            </nav>
+        </div>
+        <%# if(typeof isLogin !="undefined" && isLogin){ %>
+
+            <!-- <a href="/upload" class="nav-link">Upload video</a>
             <a href="/logout"  class="nav-link">logout</a> -->
-            
-        <%# } else{%>  
-            <!-- <a href="/login">login</a>
+
+            <%# } else{%>
+                <!-- <a href="/login">login</a>
             <a href="/signup">signup</a>
             <a href="/">home</a> -->
-            <%# } %> 
+                <%# } %>

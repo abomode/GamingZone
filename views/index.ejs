@@ -1,50 +1,107 @@
 <%- include("header") %>
 
-     <!-- <div class="container">
+  <!-- <div class="container">
           <P>hello user</P>
      </div> -->
 
+     <script defer>
+      document.addEventListener("DOMContentLoaded", function (event) {
+  
+          const showNavbar = (toggleId, navId, bodyId, headerId) => {
+              const toggle = document.getElementById(toggleId),
+                  nav = document.getElementById(navId),
+                  bodypd = document.getElementById(bodyId),
+                  headerpd = document.getElementById(headerId)
+  
+              // Validate that all variables exist
+              if (toggle && nav && bodypd && headerpd) {
+                  toggle.addEventListener('click', () => {
+                      // show navbar
+                      nav.classList.toggle('show')
+                      // change icon
+                      toggle.classList.toggle('bx-x')
+                      // add padding to body
+                      bodypd.classList.toggle('body-pd')
+                      // add padding to header
+                      headerpd.classList.toggle('body-pd')
+                  })
+              }
+          }
+  
+          showNavbar('header-toggle', 'nav-bar', 'body-pd', 'header')
+  
+          /*===== LINK ACTIVE =====*/
+          const linkColor = document.querySelectorAll('.nav_link')
+  
+          function colorLink() {
+              if (linkColor) {
+                  linkColor.forEach(l => l.classList.remove('active'))
+                  this.classList.add('active')
+              }
+          }
+          linkColor.forEach(l => l.addEventListener('click', colorLink))
+  
+          // Your code to run since DOM is loaded and ready
+      });
+  </script>
 
-     <header class="header1" id="header1">
-          <ul>
-           <li>Valorant</li>
-           <li>Mini Militia</li>
-           <li>Fifa</li>
-           <li>Tekken</li>
-           <li>Pubg</li>
-           <li>Call of Duty</li>
-           <li>League of Legends</li>
-           <li>Counter-Strike</li>
-         
-          </ul>
-           
-       </header>
+
+  <header class="header1" id="header1">
+    <ul>
+      <li data-filter=".gaming ">Valorant</li>
+      <li data-filter=".education ">Mini Militia</li>
+      <li data-filter=".funny ">Fifa</li>
+      <li>Tekken</li>
+      <li>Pubg</li>
+      <li>Call of Duty</li>
+      <li>League of Legends</li>
+      <li>Counter-Strike</li>
+
+    </ul>
+
+  </header>
 
 
-        <!--Container Main start-->
-        <div class="height-100 bg-light">
-          <hr>
-      </div>
+  <!--Container Main start-->
+  <div class="height-100 bg-light">
+    <hr>
+  </div>
 
-      <div class="top-recommended">
-          <h2 style="    margin-left: 31vw;
+  <div class="top-recommended">
+    <h2 style="    margin-left: 31vw;
           margin-bottom: 5vh;
           text-decoration: underline;">Top-Recommended</h2>
-          <div class="grid grid-three-col">
-              <div class="new-card" >
-              
-                <% videos.forEach(function(video){ %> 
-                  
-                    <img src="<%= video.thumbnail %>" class="video-show">
-                    <p>
-                      <%= video.minutes +":"+ video.seconds %> 
-                  
-                      <%= video.title %>
-                       <a href="/watch/<%= video.watch %> ">view</a>
-                      </p>
-                    </div>
-                  <div>
+    <div class="grid grid-three-col">
+      <div class="new-card ">
 
-                
-                  <% }) %> 
-                  
+        <% videos.forEach(function(video){ %>
+
+          <img src="<%= video.thumbnail %>" class="video-show ">
+          <p style="    margin-left: 29px;
+          width: 100%;">
+          <div style="    display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 25vw;
+          margin-top: -14px;">
+          <div>
+            <%= video.title %> <br>
+            </div>
+            <div style=" margin-top: 12px;">
+            <a href="/watch/<%= video.watch %> " style="color: white;
+               
+              background-color: #0d0dbd;
+              padding: 5px 19px;
+              border-radius: 7px;margin-top: 12px;">View</a>
+            </div>
+          </div>
+            <%# video.minutes +":"+ video.seconds %> 
+
+           
+          </p>
+      </div>
+      <div>
+
+
+        <% }) %>
