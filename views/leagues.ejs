@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <style>
+      body{
+        background: url(../static/200.webp);
+        background-repeat: no-repeat;
+            background-position: 70%;
+            background-size: cover;
+      }
+        .new{
+          width: 71px;
+    height: 50px;
+        }
+        table{
+          background-color: rgb(225, 219, 219);
+       
+        }
+        .container{
+          width: 40%;
+          text-transform: capitalize;
+        }
+        td{
+            background-color:black;
+            /* color: white; */
+        }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <h2 style="text-align:center;color: white;    margin-left:40px;
+    ">Different Leagues</h2>
+    <table class="table table-bordered">
+        <thead class="table-dark">
+          <tr>
+            <td>Team Id</td>
+            <td>Slug</td>
+            <td>Logo</td>
+    
+          </tr>
+        </thead>
+        <tbody id="table_body">
+          <tr>
+            <td>name</td>
+            <td>name</td>
+            <td>name</td>
+      
+    
+         
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</body>
+<script>
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': 'dfe174d9b8msh50ad655beab5ac5p14fa8ejsn60414d03ff82',
+		'X-RapidAPI-Host': 'league-of-legends-esports.p.rapidapi.com'
+	}
+};
+
+fetch('https://league-of-legends-esports.p.rapidapi.com/leagues', options)
+.then((data) =>{return data.json();})
+	.then((objectData) => {
+   
+    // console.log(objectData)
+  let tableData="";
+ objectData.data.leagues.map((values)=>{
+    tableData+=`   <tr>
+        <td>${values.id}</td>
+        <td>${values.slug}</td>
+        <td ><img class="new" src="${values.image}"></td>
+      </tr>`
+  })
+  document.getElementById("table_body").innerHTML=tableData;
+  })
+	.catch(err => console.error(err));
+</script>
+</html>

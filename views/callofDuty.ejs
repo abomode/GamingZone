@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+<style>
+.tr1{
+background-color: #6868b1;
+    color: white;
+
+}
+.tr2{
+background-color: #f1eaea;
+}
+table{
+  background: #9eb1b2;
+    text-transform: capitalize;
+    
+}
+.container{
+
+  width: 60vw;
+  margin: auto;
+
+
+}
+
+body{
+  background: url(../static/200.webp);
+  background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+}
+</style>
+<body>
+  <div class="container">
+  <h2 style="text-align:center;color: white;    margin-left: 40px;
+  ">Call of Duty Statistics</h2>
+  <table class="table table-bordered">
+    <thead class="table-dark">
+      <tr>
+        <td>Rank</td>
+        <td>Username</td>
+        <td>Update Time</td>
+        <td>Kills</td>
+        <td>Prestige</td>
+        <td>Deaths</td>
+        <td>Shots</td>
+        <td>Assists</td>
+  
+      </tr>
+    </thead>
+    <tbody id="table_body">
+      <tr class="tr1">
+        <td class="bg-warning">name</td>
+        <td>name</td>
+        <td>name</td>
+        <td>Username</td>
+        <td>Update Time</td>
+        <td>Username</td>
+     
+      </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+<script>
+//   const options = {
+// 	method: 'GET',
+// 	headers: {
+// 		'X-RapidAPI-Key': 'c1ccbc42e0msh537ec9bc30f450bp1c0cb5jsn0d36f344c99e',
+// 		'X-RapidAPI-Host': 'opencritic-api.p.rapidapi.com'
+// 	}
+// };
+
+// fetch('https://call-of-duty-modern-warfare.p.rapidapi.com/leaderboard/1/battle', options)
+// 	.then((data) =>{return data.json();})
+// 	.then((objectData) => {
+//     // let table=response.Platforms[0].name;
+//     // document.getElementById("table").innerHTML=table;
+//     console.log(objectData)
+//   let tableData="";
+//  objectData.Platforms.map((values)=>{
+//     tableData+=`   <tr>
+//         <td>${values.name}</td>
+//         <td>${values.shortName}</td>
+//         <td>${values.releaseDate}</td>
+//         <td><img src="${values.imageSrc}"></td>
+//       </tr>`
+//   })
+//   document.getElementById("table_body").innerHTML=tableData;
+//   })
+// 	.catch(err => console.error(err));
+
+
+
+
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': 'c1ccbc42e0msh537ec9bc30f450bp1c0cb5jsn0d36f344c99e',
+		'X-RapidAPI-Host': 'call-of-duty-modern-warfare.p.rapidapi.com'
+	}
+};
+
+fetch('https://call-of-duty-modern-warfare.p.rapidapi.com/leaderboard/1/battle', options)
+	// .then(response => response.json())
+	// .then(response => console.log(response))
+  	.then((data) =>{return data.json();})
+	.then((objectData) => {
+   
+    console.log(objectData.entries)
+  let tableData="";
+ objectData.entries.map((values)=>{
+    tableData+=`   <tr>
+        <td>${values.rank}</td>
+        <td>${values.username}</td>
+        <td>${values.updateTime}</td>
+        <td>${values.values.kills}</td>
+        <td>${values.values.prestige}</td>
+        <td>${values.values.deaths}</td>
+        <td>${values.values.shots}</td>
+        <td>${values.values.assists}</td>
+      </tr>`
+  })
+  document.getElementById("table_body").innerHTML=tableData;
+  })
+	.catch(err => console.error(err));
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</html>
