@@ -71,6 +71,22 @@ MongoClient.connect("mongodb://localhost:27017/", { useNewUrlParser: true },
 
         });
 
+        app.get('/blog', (req, res) => {
+            res.render("blog");
+        });
+        app.get('/callofDuty', (req, res) => {
+            res.render("callofDuty");
+        });app.get('/leagues', (req, res) => {
+            res.render("leagues");
+        });app.get('/popularity', (req, res) => {
+            res.render("popularity");
+        });app.get('/price', (req, res) => {
+            res.render("price");
+        });
+        app.get('/new', (req, res) => {
+            res.render("new");
+        });
+
 
         app.get('/signup', (req, res) => {
             res.render("signup");
@@ -348,256 +364,6 @@ MongoClient.connect("mongodb://localhost:27017/", { useNewUrlParser: true },
             }
         })
 
-
-        // app.post("/do-like",(req,res)=>{
-        // if(req.session.user_id){
-        // //check already like kiya ki nhi
-
-        // database.collection("videos").findOne({
-        //    $and: [{
-        //     "_id":ObjectId(req.body.videoId)
-        // },
-        //     {
-        //         "likers._id":req.session.user_id
-        //     }]
-        // },(error,video)=>{
-        //     if(video==null){
-        // database.collection("videos").updateOne({
-        //     "_id":ObjectId(req.body.videoId)
-        // },{
-        //     $push:{
-        //         "likers":{
-        //             "_id":req.session.user_id
-        //         }
-        //     }
-        // },(error,data)=>{
-        //     res.json({
-        //         "status":"success",
-        //         "message":"video has been liked"
-        //     });
-        // })
-        //     }
-        //     else{
-        //         res.json({
-        //             "status":"error",
-        //             "message":"Already liked this video"
-        //         });
-        //     }
-        // });
-        // }
-        // else{
-        //     res.json({
-        //         "status":"error",
-        //         "message":"please login"
-
-
-        //     })
-        // }
-
-        // })
-
-
-        // app.post("/do-dislike",(req,res)=>{
-        //     if(req.session.user_id){
-        //     //check already like kiya ki nhi
-
-        //     database.collection("videos").findOne({
-        //        $and: [{
-        //         "_id":ObjectId(req.body.videoId)
-        //     },
-        //         {
-        //             "dislikers._id":req.session.user_id
-        //         }]
-        //     },(error,video)=>{
-        //         if(video==null){
-        //     database.collection("videos").updateOne({
-        //         "_id":ObjectId(req.body.videoId)
-        //     },{
-        //         $push:{
-        //             "dislikers":{
-        //                 "_id":req.session.user_id
-        //             }
-        //         }
-        //     },(error,data)=>{
-        //         res.json({
-        //             "status":"success",
-        //             "message":"video has been disliked"
-        //         });
-        //     })
-        //         }
-        //         else{
-        //             res.json({
-        //                 "status":"error",
-        //                 "message":"Already disliked this video"
-        //             });
-        //         }
-        //     });
-        //     }
-        //     else{
-        //         res.json({
-        //             "status":"error",
-        //             "message":"please login"
-
-
-        //         })
-        //     }
-
-        //     })
-
-
-
-        //     app.post("/doComment",(req,res)=>{
-        //         if(req.session.user_id){
-        //         //check already like kiya ki nhi
-
-
-        //         getUser(req.session.user_id,function(user){
-        //             database.collection("videos").findOneAndUpdate({
-        //                 "_id":ObjectId(req.body.videoId)
-        //             },{
-        //                 $push:{
-        //                     "comments":{
-        //                         "_id":ObjectId(),
-        //                         "user":{
-        //                             "_id":user._id,
-        //                             "name":user.name,
-        //                             "image":user.image
-        //                         },
-        //                         "comment":req.body.comment,
-        //                         "createdAt":new Date().getTime(),
-        //                         "replies":[]
-        //                     }
-        //                 }
-        //             },function(error,data){
-        //                 var channelId=data.value.user._id;
-        //                 database.collection("users").updateOne({
-        // "_id":ObjectId(channelId)
-        //                 },{
-        //                     $push:{
-        //                         "notification":{
-        //                             "_id":ObjectId(),
-        //                             "type":"new_comment",
-        //                             "content":req.body.comment,
-        //                             "is_read":false,
-        //                             "video_watch":data.value.watch,
-        //                             "user":{
-        //                                 "_id":user._id,
-        //                                 "name":user.name,
-        //                                 "image":user.image
-        //                             }
-        //                         }
-        //                     }
-        //                 });
-
-        //                 res.json({
-        //                     "status":"success",
-        //                     "message":"comment has been posted",
-        //                     "user":{
-        //                         "_id":user._id,
-        //                         "name":user.name,
-        //                         "image":user.image
-        //                     }
-        //                 })
-        //             })
-        //         })
-
-        //         }
-        //         else{
-        //             res.json({
-        //                 "status":"error",
-        //                 "message":"please login"
-
-
-        //             })
-        //         }
-
-        //         })
-
-        // app.get("/get-user",function(req,res){
-        //     if(req.session.user_id){
-        //         getUser(req.session.user_id,function(user){
-        //             delete user.password;
-
-        //             res.json({
-        //                 "status":"success",
-        //                 "message":"record has been fetched",
-        //                 "user":user
-        //             })
-        //         })
-        //     }
-        //     else{
-        //         res.json({
-        //             "status":"error",
-        //                 "message":"do login",
-        //         })
-        //     }
-        // })
-
-
-        // app.post("/read-notification",function(req,res){
-        //     if(req.session.user_id){
-        //         database.collection("users").updateOne({
-        //             $and:[{
-        //                 "_id":ObjectId(req.session.user_id)
-        //             },{
-        //                 "notification._id":ObjectId(req.body.notificationId)
-        //             }
-        //             ]
-        //         },{
-        //             $set:{
-        //                 "notification.$.is_read":true
-        //             }
-        //         },function(error1,data){
-        //             res.json({
-        //                 "status":"success",
-        //                 "message":"notification marked read",
-        //             })
-        //         })
-        //     }
-        //     else{
-        //         res.json({
-        //             "status":"error",
-        //             "message":"do login",
-        //         })
-        //     }
-        // // })
-        // app.get("/get-related-videos/:category/:videoId",function(req,res){
-        //     database.collection("videos").find({
-        //         $and:[{
-        //             "category":req.params.category
-        //         },{
-        //             "_id":{
-        //                 $ne:onrejectionhandled(req.params.videoId)
-        //             }
-        //         }]
-        //     }).toArray(function (error,videos) {
-        //         for (let a = 0; a < videos.length; a++) {
-        //             var x=videos[a];
-        //             var y=Math.floor(Math.random()*(a+1));
-        //             videos[a]=videos[y];
-        //             videos[y]=x;
-
-        //         }
-        //         res.json(videos);
-        //     })
-        // })
-
-        // app.get("/channel/:id",function(req,res){
-
-        // getUser(req.params._id,function(user){
-        //     if(user==null){
-        //         res.send("channel not found");
-        //     }
-        //     else{
-        //         res.render("single-channel",{
-        //             "isLogin":req.session.user_id ? true:false,
-        //             "user":user,
-        //             "isMyChannel":req.session.user_id==req.params._id
-        //         })
-        //     }
-        // })
-
-        // })
 
 
 
